@@ -4,8 +4,8 @@ version: '3'
 # в этом блоке мы описываем контейнеры, которые будут запускаться
 services:
   workspace:
-    image: php:8.1-fpm
-    container_name: console
+    build: docker/php
+    container_name: console_ws
     volumes:
       - .:/data/
     networks:
