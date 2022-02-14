@@ -1,0 +1,17 @@
+{
+  "name": "hexlet/code",
+  "description": "Code for PHP Project 1",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Alex",
+      "email": "av.priakhin@gmail.com"
+    }
+  ],
+  "require": {
+  },
+  "bin": [
+    "bin/brain-games"
+  ]
+}

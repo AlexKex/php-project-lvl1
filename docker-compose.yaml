@@ -1,0 +1,25 @@
+# версия синтаксиса
+version: '3'
+
+# в этом блоке мы описываем контейнеры, которые будут запускаться
+services:
+  workspace:
+    image: php:7.4-cli
+    container_name: console
+    volumes:
+      - .:/data/
+    networks:
+      - app-network
+
+  composer:
+    image: composer
+    container_name: cmp
+    volumes:
+      - .:/data/
+    networks:
+      - app-network
+
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
