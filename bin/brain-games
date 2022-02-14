@@ -1,2 +1,7 @@
-#!/usr/bin/env php
-echo "Welcome to the Brain Games!";
+#!/usr/local/bin/php
+
+<?php
+
+require_once (__DIR__ . "/../vendor/autoload.php");
+
+\Game\greetings();

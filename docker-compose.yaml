@@ -4,7 +4,7 @@ version: '3'
 # в этом блоке мы описываем контейнеры, которые будут запускаться
 services:
   workspace:
-    image: php:7.4-cli
+    image: php:8.1-fpm
     container_name: console
     volumes:
       - .:/data/

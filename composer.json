@@ -10,6 +10,15 @@
     }
   ],
   "require": {
+    "wp-cli/php-cli-tools": "*"
+  },
+  "autoload": {
+    "psr-0": {
+      "Game": "src/"
+    },
+    "files": [
+      "src/Cli.php"
+    ]
   },
   "bin": [
     "bin/brain-games"
