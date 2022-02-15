@@ -17,10 +17,11 @@
   },
   "autoload": {
     "psr-0": {
-      "Game": "src/"
+      "Game": "src/",
+      "GuessGame\\": "src/"
     },
     "files": [
-      "src/Cli.php"
+      "src/Cli.php", "src/GuessGame.php"
     ]
   },
   "bin": [
