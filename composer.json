@@ -20,10 +20,15 @@
       "Game": "src/",
       "GuessGame\\": "src/Games",
       "CalcGame\\": "src/Games",
+      "GcdGame\\": "src/Games",
       "Logic\\": "src/"
     },
     "files": [
-      "src/Cli.php", "src/Games/GuessGame.php", "src/Games/CalcGame.php", "src/Logic.php"
+      "src/Cli.php",
+      "src/Games/GuessGame.php",
+      "src/Games/CalcGame.php",
+      "src/Games/GcdGame.php",
+      "src/Logic.php"
     ]
   },
   "bin": [
