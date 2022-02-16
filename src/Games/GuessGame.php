@@ -2,14 +2,6 @@
 
 namespace GuessGame;
 
-use function cli\line;
-use function cli\prompt;
-use function Logic\congrats;
-use function Logic\correctAnswer;
-use function Logic\gameIntro;
-use function Logic\gameStep;
-use function Logic\wrongAnswer;
-
 function startGame(): void
 {
     $gameMessages = [

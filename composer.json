@@ -22,6 +22,7 @@
       "CalcGame\\": "src/Games",
       "GcdGame\\": "src/Games",
       "ProgressionGame\\": "src/Games",
+      "PrimeGame\\": "src/Games",
       "Logic\\": "src/"
     },
     "files": [
@@ -30,10 +31,15 @@
       "src/Games/CalcGame.php",
       "src/Games/GcdGame.php",
       "src/Games/ProgressionGame.php",
+      "src/Games/PrimeGame.php",
       "src/Logic.php"
     ]
   },
   "bin": [
-    "bin/brain-games"
+    "bin/brain-games",
+    "bin/brain-even",
+    "bin/brain-gcd",
+    "bin/brain-prime",
+    "bin/brain-progression"
   ]
 }
