@@ -20,7 +20,7 @@ function generateQuest(): array
 {
     $result = [];
 
-    $number = rand(0, 100);
+    $number = rand(1, 100);
 
     $result['text'] = $number;
     $result['correct'] = isPrime($number) ? 'yes' : 'no';
@@ -32,9 +32,11 @@ function isPrime(int $number): bool
 {
     $result = true;
 
-    for ($i = 2; $i <= sqrt($number); $i++) {
-        if ($number % $i == 0) {
-            $result = false;
+    if ($number != 1) {
+        for ($i = 2; $i <= sqrt($number); $i++) {
+            if ($number % $i == 0) {
+                $result = false;
+            }
         }
     }
 
