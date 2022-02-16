@@ -4,40 +4,34 @@ namespace GuessGame;
 
 use function cli\line;
 use function cli\prompt;
+use function Logic\congrats;
+use function Logic\correctAnswer;
+use function Logic\gameIntro;
+use function Logic\gameStep;
+use function Logic\wrongAnswer;
 
-function startGame()
+function startGame(): void
 {
-    line("Welcome to the Brain Games!");
-    $userName = prompt("May I have your name?");
-    line("Hello, %s", $userName);
+    $gameMessages = [
+        'intro' => 'Answer "yes" if the number is even, otherwise answer "no".'
+    ];
 
-    guessGame($userName);
+    \Logic\game(
+        "GuessGame\generateQuest",
+        $gameMessages
+    );
 }
 
-function guessGame(string $userName): void
+function generateQuest(): array
 {
-    line('Answer "yes" if the number is even, otherwise answer "no".');
-    $gameState = true;
-    $counter = 0;
+    $result = [];
 
-    while ($gameState) {
-        $number = rand(0, 9999);
-        line("Question: " . $number);
-        $answer = prompt("Your answer");
+    $number = rand(-9999, 9999);
 
-        if ((isEven($number) && $answer == 'yes') || (!isEven($number) && $answer == 'no')) {
-            line('Correct');
-            $counter++;
+    $result['text'] = $number;
+    $result['correct'] = isEven($number) ? 'yes' : 'no';
 
-            if ($counter == 3) {
-                line("Congratulations, $userName!");
-                $gameState = false;
-            }
-        } else {
-            line($answer . "is wrong answer ;(. Correct answer was '" . (($answer == "yes") ? "no" : "yes") . "'.");
-            $gameState = false;
-        }
-    }
+    return $result;
 }
 
 function isEven(int $number): bool

@@ -18,10 +18,12 @@
   "autoload": {
     "psr-0": {
       "Game": "src/",
-      "GuessGame\\": "src/"
+      "GuessGame\\": "src/",
+      "CalcGame\\": "src/",
+      "Logic\\": "src/"
     },
     "files": [
-      "src/Cli.php", "src/GuessGame.php"
+      "src/Cli.php", "src/GuessGame.php", "src/CalcGame.php", "src/Logic.php"
     ]
   },
   "bin": [
