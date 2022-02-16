@@ -50,7 +50,7 @@ function game(string $questGeneratorFunctionName, array $gameMessages): void
     $counter = 0;
 
     while ($gameState) {
-        if(!function_exists($questGeneratorFunctionName)) {
+        if (!function_exists($questGeneratorFunctionName)) {
             $gameState = false;
         }
 
