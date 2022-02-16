@@ -21,6 +21,7 @@
       "GuessGame\\": "src/Games",
       "CalcGame\\": "src/Games",
       "GcdGame\\": "src/Games",
+      "ProgressionGame\\": "src/Games",
       "Logic\\": "src/"
     },
     "files": [
@@ -28,6 +29,7 @@
       "src/Games/GuessGame.php",
       "src/Games/CalcGame.php",
       "src/Games/GcdGame.php",
+      "src/Games/ProgressionGame.php",
       "src/Logic.php"
     ]
   },
