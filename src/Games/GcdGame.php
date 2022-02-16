@@ -29,10 +29,12 @@ function generateQuest(): array
 
 function greaterCommonDivisor(int $firstNumber, int $secondNumber): int
 {
-    while ($firstNumber != $secondNumber)
-        if ($firstNumber > $secondNumber)
+    while ($firstNumber != $secondNumber) {
+        if ($firstNumber > $secondNumber) {
             $firstNumber -= $secondNumber;
-        else
+        } else {
             $secondNumber -= $firstNumber;
+        }
+    }
     return $firstNumber;
 }

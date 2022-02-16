@@ -24,11 +24,11 @@ function generateQuest(): array
     $progression = [];
     $startNumber = rand(1, 25);
 
-    for($i = 0; $i < rand(5, 11); $i++) {
+    for ($i = 0; $i < rand(5, 11); $i++) {
         $progression[] = $startNumber + $progressionStep * $i;
     }
 
-    $hiddenIndex = rand(0, count($progression)-1);
+    $hiddenIndex = rand(0, count($progression) - 1);
     $answer = $progression[$hiddenIndex];
     $progression[$hiddenIndex] = "..";
 
@@ -37,4 +37,3 @@ function generateQuest(): array
 
     return $result;
 }
-
