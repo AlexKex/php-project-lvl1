@@ -28,7 +28,7 @@ function gameStep(string $question = ""): string
 
 function wrongAnswer(string $answer, string $correct, string $userName): void
 {
-    line($answer . "is wrong answer ;(. Correct answer was '" . $correct . "'.");
+    line($answer . " is wrong answer ;(. Correct answer was '" . $correct . "'.");
     line("Let's try again, $userName!");
 }
 
