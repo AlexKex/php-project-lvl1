@@ -26,9 +26,10 @@ function gameStep(string $question = ""): string
     return \cli\prompt("Your answer");
 }
 
-function wrongAnswer(string $answer, string $correct): void
+function wrongAnswer(string $answer, string $correct, string $userName): void
 {
     line($answer . "is wrong answer ;(. Correct answer was '" . $correct . "'.");
+    line("Let's try again, $userName!");
 }
 
 function correctAnswer(): void
@@ -64,7 +65,7 @@ function game(string $questGeneratorFunctionName, array $gameMessages): void
                 $gameState = false;
             }
         } else {
-            wrongAnswer($answer, $correct);
+            wrongAnswer($answer, $correct, $userName);
             $gameState = false;
         }
     }
