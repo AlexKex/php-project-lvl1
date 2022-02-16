@@ -42,7 +42,7 @@ function congrats(string $userName): void
     line("Congratulations, $userName!");
 }
 
-function game(string $questGeneratorFunctionName, array $gameMessages): void
+function game($questGeneratorFunctionName, array $gameMessages): void
 {
     $userName = gameIntro($gameMessages['intro']);
 
