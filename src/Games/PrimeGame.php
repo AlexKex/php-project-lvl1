@@ -32,8 +32,8 @@ function isPrime(int $number): bool
 {
     $result = true;
 
-    for($i=2; $i <= sqrt($number); $i++) {
-        if($number % $i == 0){
+    for ($i = 2; $i <= sqrt($number); $i++) {
+        if ($number % $i == 0) {
             $result = false;
         }
     }

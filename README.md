@@ -12,3 +12,5 @@
 [Asciinema cast for gcd game](https://asciinema.org/a/Na55bJgGePzv7ABeoOdPzQJZ2)
 
 [Asciinema cast for progression game](https://asciinema.org/a/ztPr5is9QkHoVZh754DkJSBHC)
+
+[Asciinema cast for prime game](https://asciinema.org/a/6cY70ArjX67yGYGTKVKcZK8FR)
