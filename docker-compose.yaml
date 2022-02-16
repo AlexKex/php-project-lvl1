@@ -11,14 +11,6 @@ services:
     networks:
       - app-network
 
-  composer:
-    image: composer
-    container_name: cmp
-    volumes:
-      - .:/data/
-    networks:
-      - app-network
-
 #Docker Networks
 networks:
   app-network:
