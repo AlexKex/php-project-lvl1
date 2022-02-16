@@ -10,3 +10,5 @@
 [Asciinema cast for calc game](https://asciinema.org/a/BuIuzw0jNWTnlHpjjGG1Hbv7O)
 
 [Asciinema cast for gcd game](https://asciinema.org/a/Na55bJgGePzv7ABeoOdPzQJZ2)
+
+[Asciinema cast for progression game](https://asciinema.org/a/ztPr5is9QkHoVZh754DkJSBHC)
