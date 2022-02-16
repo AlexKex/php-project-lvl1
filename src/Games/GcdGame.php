@@ -21,7 +21,7 @@ function generateQuest(): array
     $firstNumber = rand(0, 150);
     $secondNumber = rand(0, 150);
 
-    $result['text'] = $firstNumber . " " . $secondNumber;
+    $result['text'] = "$firstNumber $secondNumber";
     $result['correct'] = greaterCommonDivisor($firstNumber, $secondNumber);
 
     return $result;
