@@ -30,15 +30,13 @@ function generateQuest(): array
 
 function isPrime(int $number): bool
 {
-    $result = true;
-
     if ($number != 1) {
         for ($i = 2; $i <= sqrt($number); $i++) {
             if ($number % $i == 0) {
-                $result = false;
+                return false;
             }
         }
     }
 
-    return $result;
+    return true;
 }
