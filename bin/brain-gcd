@@ -2,7 +2,7 @@
 
 <?php
 
-use function GcdGame\startGame;
+use function \Games\Gcd\startGame;
 
 require_once (__DIR__ . "/../vendor/autoload.php");
 

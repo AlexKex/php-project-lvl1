@@ -4,4 +4,4 @@
 
 require_once (__DIR__ . "/../vendor/autoload.php");
 
-\CalcGame\startGame();
+\Games\Calc\startGame();

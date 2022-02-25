@@ -2,7 +2,7 @@
 
 <?php
 
-use function ProgressionGame\startGame;
+use function Games\Progression\startGame;
 
 require_once (__DIR__ . "/../vendor/autoload.php");
 

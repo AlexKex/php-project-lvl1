@@ -5,6 +5,8 @@ namespace Logic;
 use function cli\line;
 use function cli\prompt;
 
+const MAX_WINS_STREAK = 3;
+
 function introDialogue(string $message): string
 {
     line("Welcome to the Brain Games!");
@@ -42,31 +44,30 @@ function congrats(string $userName): void
     line("Congratulations, $userName!");
 }
 
-function game(callable $questGeneratorFunctionName, array $gameMessages): void
+function game(callable $questGeneratorFunctionName, string $gameIntroMessage): void
 {
-    $userName = gameIntro($gameMessages['intro']);
+    $userName = gameIntro($gameIntroMessage);
 
-    $gameState = true;
     $counter = 0;
 
-    while ($gameState) {
+    while (true) {
         $quest = call_user_func($questGeneratorFunctionName);
 
-        $answer = gameStep($quest['text']);
+        $answer = gameStep($quest['question']);
 
-        $correct = $quest['correct'];
+        $correct = $quest['correctAnswer'];
 
         if ($answer == $correct) {
             correctAnswer();
             $counter++;
 
-            if ($counter == 3) {
+            if ($counter == MAX_WINS_STREAK) {
                 congrats($userName);
-                $gameState = false;
+                break;
             }
         } else {
             wrongAnswer($answer, $correct, $userName);
-            $gameState = false;
+            break;
         }
     }
 }

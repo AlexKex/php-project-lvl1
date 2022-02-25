@@ -1,16 +1,12 @@
 <?php
 
-namespace GcdGame;
+namespace Games\Gcd;
 
 function startGame(): void
 {
-    $gameMessages = [
-        'intro' => "Find the greatest common divisor of given numbers."
-    ];
-
     \Logic\game(
-        "GcdGame\generateQuest",
-        $gameMessages
+        "Games\Gcd\generateQuest",
+        "Find the greatest common divisor of given numbers."
     );
 }
 
@@ -21,13 +17,13 @@ function generateQuest(): array
     $firstNumber = rand(0, 150);
     $secondNumber = rand(0, 150);
 
-    $result['text'] = "$firstNumber $secondNumber";
-    $result['correct'] = greaterCommonDivisor($firstNumber, $secondNumber);
+    $result['question'] = "$firstNumber $secondNumber";
+    $result['correctAnswer'] = greatestCommonDivisor($firstNumber, $secondNumber);
 
     return $result;
 }
 
-function greaterCommonDivisor(int $firstNumber, int $secondNumber): int
+function greatestCommonDivisor(int $firstNumber, int $secondNumber): int
 {
     while ($firstNumber != $secondNumber) {
         if ($firstNumber > $secondNumber) {
