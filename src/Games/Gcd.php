@@ -2,6 +2,9 @@
 
 namespace Games\Gcd;
 
+const MIN_RANDOM_NUMBER = 0;
+const MAX_RANDOM_NUMBER = 150;
+
 function startGame(): void
 {
     $introMessage = "Find the greatest common divisor of given numbers.";
@@ -16,8 +19,8 @@ function generateQuest(): array
 {
     $result = [];
 
-    $firstNumber = rand(0, 150);
-    $secondNumber = rand(0, 150);
+    $firstNumber = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+    $secondNumber = rand(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
 
     $result['question'] = "$firstNumber $secondNumber";
     $result['correctAnswer'] = greatestCommonDivisor($firstNumber, $secondNumber);
