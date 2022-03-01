@@ -4,9 +4,11 @@ namespace Games\Even;
 
 function startGame(): void
 {
+    $introMessage = 'Answer "yes" if the number is even, otherwise answer "no".';
+
     \Logic\game(
         "Games\Even\generateQuest",
-        'Answer "yes" if the number is even, otherwise answer "no".'
+        $introMessage
     );
 }
 

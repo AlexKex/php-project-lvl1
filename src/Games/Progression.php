@@ -13,9 +13,11 @@ const MAX_PROGRESSION_LENGTH = 11;
 
 function startGame(): void
 {
+    $introMessage = "What number is missing in the progression?";
+
     \Logic\game(
         "Games\Progression\generateQuest",
-        "What number is missing in the progression?"
+        $introMessage
     );
 }
 

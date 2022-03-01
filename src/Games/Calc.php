@@ -4,9 +4,11 @@ namespace Games\Calc;
 
 function startGame(): void
 {
+    $introMessage = "What is the result of the expression?";
+
     \Logic\game(
         "Games\Calc\generateQuest",
-        "What is the result of the expression?"
+        $introMessage
     );
 }
 
@@ -17,15 +19,19 @@ function generateQuest(): array
     $firstNumber = rand(-9, 9);
     $secondNumber = rand(-9, 9);
     $operations = [
-        "+" => ["func" => add($firstNumber, $secondNumber)],
-        "-" => ["func" => subtraction($firstNumber, $secondNumber)],
-        "*" => ["func" => multiply($firstNumber, $secondNumber)]
+        "+" => "add",
+        "-" => "subtraction",
+        "*" => "multiply"
     ];
 
     $chosenOperationIndex = array_rand($operations);
 
     $result['question'] = $firstNumber . " " . $chosenOperationIndex . " " . $secondNumber;
-    $result['correctAnswer'] = $operations[$chosenOperationIndex]['func'];
+    $result['correctAnswer'] = call_user_func(
+        "\Games\Calc\\" . $operations[$chosenOperationIndex],
+        $firstNumber,
+        $secondNumber
+    );
 
     return $result;
 }

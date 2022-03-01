@@ -4,9 +4,11 @@ namespace Games\Gcd;
 
 function startGame(): void
 {
+    $introMessage = "Find the greatest common divisor of given numbers.";
+
     \Logic\game(
         "Games\Gcd\generateQuest",
-        "Find the greatest common divisor of given numbers."
+        $introMessage
     );
 }
 
