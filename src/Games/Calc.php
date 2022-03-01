@@ -29,13 +29,15 @@ function generateQuest(): array
     $chosenOperationIndex = array_rand($operations);
 
     $result['question'] = $firstNumber . " " . $chosenOperationIndex . " " . $secondNumber;
-    $functionToCall = Closure::fromCallable("Games\Calc\\" . $operations[$chosenOperationIndex]);
+    $functionName = "Games\Calc\\" . $operations[$chosenOperationIndex];
 
-    $result['correctAnswer'] = callSelectedFunction(
-        $functionToCall,
-        $firstNumber,
-        $secondNumber
-    );
+    if (is_callable($functionName)) {
+        $result['correctAnswer'] = callSelectedFunction(
+            $functionName,
+            $firstNumber,
+            $secondNumber
+        );
+    }
 
     return $result;
 }
