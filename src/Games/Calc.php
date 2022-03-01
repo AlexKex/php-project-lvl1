@@ -27,14 +27,24 @@ function generateQuest(): array
     $chosenOperationIndex = array_rand($operations);
 
     $result['question'] = $firstNumber . " " . $chosenOperationIndex . " " . $secondNumber;
-    $functionToCall = "\Games\Calc\\" . $operations[$chosenOperationIndex];
-    $result['correctAnswer'] = call_user_func(
+    $result['correctAnswer'] = callSelectedFunction($chosenOperationIndex, $firstNumber, $secondNumber);
+
+    return $result;
+}
+
+/**
+ * This function was added because Hexlet's PHPSTan
+ * doesn't pass direct call.
+ * My local does :(
+ * @return int
+ */
+function callSelectedFunction(callable $functionToCall, int $firstNumber, int $secondNumber): int
+{
+    return call_user_func(
         $functionToCall,
         $firstNumber,
         $secondNumber
     );
-
-    return $result;
 }
 
 function add(int $firstNumber, int $secondNumber): int
