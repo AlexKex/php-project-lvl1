@@ -2,6 +2,8 @@
 
 namespace Games\Calc;
 
+use Closure;
+
 function startGame(): void
 {
     $introMessage = "What is the result of the expression?";
@@ -27,8 +29,7 @@ function generateQuest(): array
     $chosenOperationIndex = array_rand($operations);
 
     $result['question'] = $firstNumber . " " . $chosenOperationIndex . " " . $secondNumber;
-    $functionName = $operations[$chosenOperationIndex];
-    $functionToCall = "Games\\Calc\\$functionName";
+    $functionToCall = ("Games\Calc\\" . $operations[$chosenOperationIndex])(...);
 
     $result['correctAnswer'] = callSelectedFunction(
         $functionToCall,
