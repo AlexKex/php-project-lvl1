@@ -27,7 +27,11 @@ function generateQuest(): array
     $chosenOperationIndex = array_rand($operations);
 
     $result['question'] = $firstNumber . " " . $chosenOperationIndex . " " . $secondNumber;
-    $result['correctAnswer'] = callSelectedFunction($chosenOperationIndex, $firstNumber, $secondNumber);
+    $result['correctAnswer'] = callSelectedFunction(
+        "\\Games\\Calc\\".$operations[$chosenOperationIndex],
+        $firstNumber,
+        $secondNumber
+    );
 
     return $result;
 }
