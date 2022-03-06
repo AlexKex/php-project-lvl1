@@ -7,7 +7,7 @@ use function cli\prompt;
 
 const MAX_WINS_STREAK = 3;
 
-function game(callable $questGeneratorFunctionName, string $gameIntroMessage): void
+function game(callable $questGeneratingFunctionName, string $gameIntroMessage): void
 {
     line("Welcome to the Brain Games!");
     $userName = prompt("May I have your name?");
@@ -16,26 +16,25 @@ function game(callable $questGeneratorFunctionName, string $gameIntroMessage): v
 
     $counter = 0;
 
-    while (true) {
-        $quest = call_user_func($questGeneratorFunctionName);
+    while ($counter < MAX_WINS_STREAK) {
+        $quest = call_user_func($questGeneratingFunctionName);
 
-        line("Question: " . $quest['question']);
+        [$question, $correct] = $quest;
+
+        line("Question: " . $question);
         $answer = \cli\prompt("Your answer");
-
-        $correct = $quest['correctAnswer'];
 
         if ($answer == $correct) {
             line('Correct');
             $counter++;
-
-            if ($counter == MAX_WINS_STREAK) {
-                line("Congratulations, $userName!");
-                break;
-            }
         } else {
             line($answer . " is wrong answer ;(. Correct answer was '" . $correct . "'.");
             line("Let's try again, $userName!");
             break;
         }
+    }
+
+    if ($counter == MAX_WINS_STREAK) {
+        line("Congratulations, $userName!");
     }
 }
