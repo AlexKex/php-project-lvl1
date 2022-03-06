@@ -19,16 +19,16 @@ function game(callable $questGeneratingFunctionName, string $gameIntroMessage): 
     while ($counter < MAX_WINS_STREAK) {
         $quest = call_user_func($questGeneratingFunctionName);
 
-        [$question, $correct] = $quest;
+        ['question' => $question, 'correctAnswer' => $correctAnswer] = $quest;
 
         line("Question: " . $question);
         $answer = \cli\prompt("Your answer");
 
-        if ($answer == $correct) {
+        if ($answer == $correctAnswer) {
             line('Correct');
             $counter++;
         } else {
-            line($answer . " is wrong answer ;(. Correct answer was '" . $correct . "'.");
+            line($answer . " is wrong answer ;(. Correct answer was '" . $correctAnswer . "'.");
             line("Let's try again, $userName!");
             break;
         }
